@@ -3,27 +3,17 @@
 
 {% block title %}
 
-Inicio
+Nosotros
 
 {% endblock %}
 
 
 {% block contenido %}
 
-<div class="p-5 bg-light">
-    <div class="container">
-        <h1 class="display-3">Bienvenidos al sitio</h1>
-        <p class="lead">Emepzar a ingresar</p>
-        <hr class="my-2">
-        <p>Elige que quieres cargar</p>
-        <p class="lead">
-            <a class="btn btn-success" href="{% url 'crear_anime' %}" role="button">Animes</a>
-            <a class="btn btn-success" href="{% url 'crear_serie' %}" role="button">Series</a>
-            <a class="btn btn-success" href="{% url 'crear_pelicula' %}" role="button">Peliculas</a>
-            
-            
-        </p>
-    </div>
-</div>
+
+<a name="" id="" class="btn btn-primary" href="{% url 'usuario_signup' %}" role="button">usuario_signup</a>
+<a name="" id="" class="btn btn-primary" href="{% url 'usuario_login' %}" role="button">Iniciar sesion</a>
+
+
 
 {% endblock %}

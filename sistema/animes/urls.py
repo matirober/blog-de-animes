@@ -23,6 +23,11 @@ urlpatterns = [
     path('peliculas/actualizar_pelicula', views.actualizar_pelicula, name='actualizar_pelicula'),
     path('borrar_pelicula/<int:id>', views.borrar_pelicula, name='borrar_pelicula'),
     path('peliculas/actualizar_pelicula/<int:id>', views.actualizar_pelicula, name='actualizar_pelicula'),
+    path("crear_usuario/", views.SignUpView.as_view(), name ="usuario_signup"),
+    path("perfil_usuario/<pk>/", views.BloggerProfile.as_view(), name ="usuario_profile"),
+    path("editar_usuario/<pk>/", views.BloggerUpdate.as_view(), name ="usuario_edit"),
+    path("entrar/", views.UsuarioLogin.as_view(), name="usuario_login"),
+    path("salir/", views.UsuarioLogout.as_view(), name="usuario_logout"),
     
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

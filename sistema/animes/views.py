@@ -8,6 +8,7 @@ from django.views.generic import CreateView, UpdateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
+from django.contrib.auth.views import LoginView, LogoutView
 
 
 # Create your views here.
@@ -95,11 +96,31 @@ def borrar_pelicula(request, id):
     pelicula.delete()
     return render(request, 'pelicula')
 
+class SignUpView(SuccessMessageMixin, CreateView):
+  template_name = 'usuarios/usuario_crear_cuenta_form.html'
+  success_url = reverse_lazy('inicio')
+  form_class = UserCreationForm
+  success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
+
+class BloggerProfile(DetailView):
+
+    model = User
+    template_name = "usuarios/usuario_detail.html"
 
 
+class BloggerUpdate(LoginRequiredMixin, UpdateView):
+
+    model = User
+    template_name = "usuarios/usuario_form.html"
+    fields = ["username", "email", "first_name", "last_name"]
+
+    def get_success_url(self):
+      return reverse_lazy("usuario_profile", kwargs={"pk": self.request.user.id})
+
+class UsuarioLogin(LoginView):
+    template_name = 'usuarios/usuario_login.html'
+    next_page = reverse_lazy("nosotros")
 
 
-
-
-
-
+class UsuarioLogout(LogoutView):
+    template_name = 'usuarios/usuario_logout.html'
