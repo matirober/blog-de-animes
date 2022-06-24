@@ -1,5 +1,5 @@
 from django import forms
-from .models import Anime, Serie, Pelicula
+from .models import Anime, Serie, Pelicula, Avatar
 
 
 
@@ -17,6 +17,12 @@ class PeliculaForm(forms.ModelForm):
     class Meta:
         model = Pelicula
         fields = '__all__'
+
+class AvatarForm(forms.ModelForm):
+    class Meta:
+        model = Avatar
+        fields = '__all__'
+
 
 
 

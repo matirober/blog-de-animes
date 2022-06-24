@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from animes.models import Anime, Serie, Pelicula
+from animes.models import Anime, Avatar, Serie, Pelicula
 from .forms import AnimeForm, SerieForm, PeliculaForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.forms import UserCreationForm
@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 
 # Create your views here.
@@ -44,7 +45,7 @@ def actualizar_anime(request, id):
 def borrar_anime(request, id):
     anime = Anime.objects.get(id=id)
     anime.delete()
-    return render(request, 'animes')
+    return redirect('animes')
 
         #CREO SERIES Y TODAS SUS COSAS
 
@@ -70,7 +71,7 @@ def actualizar_serie(request, id):
 def borrar_serie(request, id):
     serie = Serie.objects.get(id=id)
     serie.delete()
-    return render(request, 'serie')
+    return redirect('series')
 
 def peliculas(request):
     peliculas = Pelicula.objects.all()
@@ -94,11 +95,11 @@ def actualizar_pelicula(request, id):
 def borrar_pelicula(request, id):
     pelicula = Pelicula.objects.get(id=id)
     pelicula.delete()
-    return render(request, 'pelicula')
+    return render(request, 'peliculas')
 
 class SignUpView(SuccessMessageMixin, CreateView):
   template_name = 'usuarios/usuario_crear_cuenta_form.html'
-  success_url = reverse_lazy('inicio')
+  success_url = reverse_lazy('usuario_login')
   form_class = UserCreationForm
   success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
 
@@ -124,3 +125,8 @@ class UsuarioLogin(LoginView):
 
 class UsuarioLogout(LogoutView):
     template_name = 'usuarios/usuario_logout.html'
+
+class UsuarioList(ListView):
+
+    model = Avatar
+    template_name = "usuarios/usuario_list.html"
