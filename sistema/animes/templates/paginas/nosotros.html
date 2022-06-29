@@ -11,6 +11,7 @@ Inicio
 
 {% block contenido %}
 
+
 <div class="p-5 bg-light">
     <div class="container">
         <h1 class="display-3">Bienvenidos al sitio</h1>
@@ -18,9 +19,10 @@ Inicio
         <hr class="my-2">
         <p>Elige que quieres cargar</p>
         <p class="lead">
-            <a class="btn btn-success" href="{% url 'crear_anime' %}" role="button">Animes</a>
-            <a class="btn btn-success" href="{% url 'crear_serie' %}" role="button">Series</a>
-            <a class="btn btn-success" href="{% url 'crear_pelicula' %}" role="button">Peliculas</a>
+            <a class="btn btn-success" href="{% url 'favoritos' %}" role="button"> Mis favoritos</a>
+            <a class="btn btn-success" href="{% url 'animes' %}" role="button">Animes</a>
+            <a class="btn btn-success" href="{% url 'series' %}" role="button">Series</a>
+            <a class="btn btn-success" href="{% url 'peliculas' %}" role="button">Peliculas</a>
             
             
         </p>
