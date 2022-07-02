@@ -14,13 +14,13 @@ from django.contrib.auth.forms import UserCreationForm
 class BlogList(ListView):
 
     model = BlogModel
-    template_name = "blog/blog_list.html"
+    template_name = "PaginasBlog/blog_list.html"
 
 
 class BlogDetail(DetailView):
 
     model = BlogModel
-    template_name = "blog/blog_details.html"
+    template_name = "PaginasBlog/blog_details.html"
 
 
 class BlogCreate(LoginRequiredMixin, CreateView):
@@ -57,10 +57,10 @@ class BlogDelete(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
 
 
 class BlogLogin(LoginView):
-    template_name = 'blog/blog_login.html'
+    template_name = 'PaginasBlog/blog_login.html'
     next_page = reverse_lazy("blog_list")
 
 
 class BlogLogout(LogoutView):
-    template_name = 'blog/blog_logout.html'
+    template_name = 'PaginasBlog/blog_logout.html'
 # Create your views here.
