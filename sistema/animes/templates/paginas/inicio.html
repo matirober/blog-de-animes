@@ -11,10 +11,13 @@ Home
 {% block contenido %}
 
 
-<a name="" id="" class="btn btn-primary" href="{% url 'usuario_signup' %}" role="button">Registrarse</a>
-<a name="" id="" class="btn btn-primary" href="{% url 'usuario_login' %}" role="button">Iniciar sesion</a>
-<a name="" id="" class="btn btn-primary" href="{% url 'usuario_logout' %}" role="button">Salir</a>
-<a name="" id="" class="btn btn-primary" href="{% url 'blog_login' %}"role="button">Crea tu blog</a>
+{% if user.is_authenticated %}
+    <a name="" id="" class="btn btn-primary" href="{% url 'blog_list' %}"role="button">Crea tu blog</a>
+    <a name="" id="" class="btn btn-primary" href="{% url 'usuario_logout' %}" role="button">Salir</a>
+{% else %}
+    <a name="" id="" class="btn btn-primary" href="{% url 'usuario_signup' %}" role="button">Registrarse</a>
+    <a name="" id="" class="btn btn-primary" href="{% url 'usuario_login' %}" role="button">Iniciar sesion</a>
+{% endif %}
 
 
 {% endblock %}

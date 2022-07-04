@@ -7,7 +7,9 @@
 
 <div class="card">
     <div class="card-header">
+        {% if user.is_authenticated %}
         <a name="" id="" class="btn btn-success" href="{% url 'crear_pelicula' %}" role="button">Agregar una nueva pelicula</a>
+        {% endif %}
     </div>
     <div class="card-body">
         <h4 class="card-title">Peliculas</h4>
@@ -21,8 +23,13 @@
                     <th>Descripcion</th>
                     <th>Autor</th>
                     <th>Duracion</th>
+<<<<<<< HEAD
+                    {% if user.is_authenticated %}
+=======
                     <th>Fecha de carga</th>
+>>>>>>> main
                     <th>Acciones</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
@@ -38,11 +45,16 @@
                     <td>{{ pelicula.descripcion }}</td>
                     <td>{{ pelicula.autor }}</td>
                     <td>{{ pelicula.duracion }}</td>
+<<<<<<< HEAD
+                    {% if user.is_authenticated %}
+=======
                     <td>{{ pelicula.fecha_de_carga }}</td>
+>>>>>>> main
                     <td> 
                         <a name="" id="" class="btn btn-info" href="{% url 'actualizar_pelicula' pelicula.id %}" role="button">Actualizar</a> 
                         <a name="" id="" class="btn btn-danger" href="{% url 'borrar_pelicula' pelicula.id %}" role="button">Borrar</a> 
                     </td>
+                    {% endif %}
                 </tr>
 
                 {% endfor %}
