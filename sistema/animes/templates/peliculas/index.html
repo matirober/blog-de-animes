@@ -23,7 +23,11 @@
                     <th>Descripcion</th>
                     <th>Autor</th>
                     <th>Duracion</th>
+<<<<<<< HEAD
                     {% if user.is_authenticated %}
+=======
+                    <th>Fecha de carga</th>
+>>>>>>> main
                     <th>Acciones</th>
                     {% endif %}
                 </tr>
@@ -41,7 +45,11 @@
                     <td>{{ pelicula.descripcion }}</td>
                     <td>{{ pelicula.autor }}</td>
                     <td>{{ pelicula.duracion }}</td>
+<<<<<<< HEAD
                     {% if user.is_authenticated %}
+=======
+                    <td>{{ pelicula.fecha_de_carga }}</td>
+>>>>>>> main
                     <td> 
                         <a name="" id="" class="btn btn-info" href="{% url 'actualizar_pelicula' pelicula.id %}" role="button">Actualizar</a> 
                         <a name="" id="" class="btn btn-danger" href="{% url 'borrar_pelicula' pelicula.id %}" role="button">Borrar</a> 

@@ -30,6 +30,7 @@ urlpatterns = [
     path("usuarios/entrar/", views.UsuarioLogin.as_view(), name="usuario_login"),
     path("usuarios/salir/", views.UsuarioLogout.as_view(), name="usuario_logout"),
     path("usuarios/lista_usuarios", views.UsuarioList.as_view(), name="usuario_list"),
+    path("animes/buscar_animes", views.buscar_anime, name="buscar_anime"),
     
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

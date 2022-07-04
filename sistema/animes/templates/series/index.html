@@ -25,7 +25,11 @@
                     <th>Descripcion</th>
                     <th>Autor</th>
                     <th>Duracion</th>
+<<<<<<< HEAD
                     {% if user.is_authenticated %}
+=======
+                    <th>Fecha de carga</th>
+>>>>>>> main
                     <th>Acciones</th>
                     {% endif %}
                 </tr>
@@ -44,8 +48,12 @@
                     </td>
                     <td>{{ serie.descripcion }}</td>
                     <td>{{ serie.autor }}</td>
+<<<<<<< HEAD
                     <td>{{ serie.duracion }}</td>
                     {% if user.is_authenticated %}
+=======
+                    <td>{{ serie.fecha_de_carga }}</td>
+>>>>>>> main
                     <td> 
                         <a name="" id="" class="btn btn-info" href="{% url 'actualizar_serie' serie.id %}" role="button">Actualizar</a> 
                         <a name="" id="" class="btn btn-danger" href="{% url 'borrar_serie' serie.id %}" role="button">Borrar</a> 
