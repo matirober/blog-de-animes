@@ -7,7 +7,9 @@
 
 <div class="card">
     <div class="card-header">
+        {% if user.is_authenticated %}
         <a name="" id="" class="btn btn-success" href="{% url 'crear_serie' %}" role="button">Agregar una nueva serie</a>
+        {% endif %}
     </div>
     <div class="card-body">
         <h4 class="card-title">Series</h4>
@@ -23,7 +25,9 @@
                     <th>Descripcion</th>
                     <th>Autor</th>
                     <th>Duracion</th>
+                    {% if user.is_authenticated %}
                     <th>Acciones</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
@@ -41,10 +45,12 @@
                     <td>{{ serie.descripcion }}</td>
                     <td>{{ serie.autor }}</td>
                     <td>{{ serie.duracion }}</td>
+                    {% if user.is_authenticated %}
                     <td> 
                         <a name="" id="" class="btn btn-info" href="{% url 'actualizar_serie' serie.id %}" role="button">Actualizar</a> 
                         <a name="" id="" class="btn btn-danger" href="{% url 'borrar_serie' serie.id %}" role="button">Borrar</a> 
                     </td>
+                    {% endif %}
                 </tr>
 
                 {% endfor %}

@@ -1,15 +1,9 @@
 {% if user.is_authenticated %}
   <a href="{% url 'blog_logout' %}">Salir</a>
   <a href="{% url 'blog_create' %}">Nuevo Blog</a>
-  <a href="{% url 'blogger_profile' user.id %}">Perfil {{user.username}}</a>
-{% else %}
-  <a href="{% url 'blog_login' %}">Entrar</a>
-  <a href="{% url 'usuario_login' %}">Crear Cuenta</a>
-{% endif %}
+  
 
-
-
-{% if object_list %}
+  {% if object_list %}
     {% for blog in object_list %}
     <li>
         
@@ -20,6 +14,13 @@
         {% endif %}
     </li>
     {% endfor %}
+  {% else %}
+    <h1> No hay blogs</h1>
+  {% endif %}
 {% else %}
-  <h1> No hay blogs</h1>
+<h1 class="display-3">No has iniciado sesión</h1>
+<a name="" id="" class="btn btn-primary" href="{% url 'nosotros' %}" role="button">Regresar</a>
 {% endif %}
+
+
+

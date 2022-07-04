@@ -27,6 +27,7 @@ def nosotros(request):
 def animes(request):
     animes = Anime.objects.all()
     return render(request, 'animes/index.html', {'animes': animes})
+    
 @login_required
 def crear_anime(request):
     formulario = AnimeForm(request.POST or None, request.FILES or None)
