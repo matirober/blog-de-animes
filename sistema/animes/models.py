@@ -12,8 +12,8 @@ class Anime(models.Model):
     imagen = models.ImageField(upload_to='imagenes/', verbose_name='Imagen', null=True)
     descripcion = models.TextField(max_length=500, verbose_name='Descripcion')
     autor = models.CharField(max_length=100)
-    duracion = models.FloatField()
     fecha_de_carga = models.DateField()
+    donde_ver = models.URLField()
 
     def _str__(self):
         fila = "Titulo:" + self.titulo +  "-" + "Descripcion:" + self.descripcion
@@ -31,8 +31,8 @@ class Serie(models.Model):
     imagen = models.ImageField(upload_to='imagenes/', verbose_name='Imagen', null=True)
     descripcion = models.TextField(max_length=500, verbose_name='Descripcion')
     autor = models.CharField(max_length=100)
-    duracion = models.FloatField()
     fecha_de_carga = models.DateField()
+    donde_ver = models.URLField()
 
     def _str__(self):
         fila = "Titulo:" + self.titulo +  "-" + "Descripcion:" + self.descripcion
@@ -50,6 +50,7 @@ class Pelicula(models.Model):
     autor = models.CharField(max_length=100)
     duracion = models.FloatField()
     fecha_de_carga = models.DateField()
+    donde_ver = models.URLField()
 
     def _str__(self):
         fila = "Titulo:" + self.titulo +  "-" + "Descripcion:" + self.descripcion

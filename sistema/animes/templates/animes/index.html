@@ -25,6 +25,7 @@
                     <th>Autor</th>
                     <th>Duracion</th>
                     <th>Fecha de carga</th>
+                    <th>Donde ver</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -42,8 +43,8 @@
                     </td>
                     <td>{{ anime.descripcion }}</td>
                     <td>{{ anime.autor }}</td>
-                    <td>{{ anime.duracion }}</td>
                     <td>{{ anime.fecha_de_carga }}</td>
+                    <td>{{ anime.donde_ver}}</td>
                     <td> 
                         <a name="" id="" class="btn btn-info" href="{% url 'actualizar_anime' anime.id %}" role="button">Actualizar</a> 
                         <a name="" id="" class="btn btn-danger" href="{% url 'borrar_anime' anime.id %}" role="button">Borrar</a> 
