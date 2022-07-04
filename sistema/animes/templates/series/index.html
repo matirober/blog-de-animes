@@ -23,6 +23,7 @@
                     <th>Descripcion</th>
                     <th>Autor</th>
                     <th>Duracion</th>
+                    <th>Fecha de carga</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -41,6 +42,7 @@
                     <td>{{ serie.descripcion }}</td>
                     <td>{{ serie.autor }}</td>
                     <td>{{ serie.duracion }}</td>
+                    <td>{{ serie.fecha_de_carga }}</td>
                     <td> 
                         <a name="" id="" class="btn btn-info" href="{% url 'actualizar_serie' serie.id %}" role="button">Actualizar</a> 
                         <a name="" id="" class="btn btn-danger" href="{% url 'borrar_serie' serie.id %}" role="button">Borrar</a> 

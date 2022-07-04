@@ -13,6 +13,7 @@ class Anime(models.Model):
     descripcion = models.TextField(max_length=500, verbose_name='Descripcion')
     autor = models.CharField(max_length=100)
     duracion = models.FloatField()
+    fecha_de_carga = models.DateField()
 
     def _str__(self):
         fila = "Titulo:" + self.titulo +  "-" + "Descripcion:" + self.descripcion
@@ -31,6 +32,7 @@ class Serie(models.Model):
     descripcion = models.TextField(max_length=500, verbose_name='Descripcion')
     autor = models.CharField(max_length=100)
     duracion = models.FloatField()
+    fecha_de_carga = models.DateField()
 
     def _str__(self):
         fila = "Titulo:" + self.titulo +  "-" + "Descripcion:" + self.descripcion
@@ -47,6 +49,7 @@ class Pelicula(models.Model):
     descripcion = models.TextField(max_length=500, verbose_name='Descripcion')
     autor = models.CharField(max_length=100)
     duracion = models.FloatField()
+    fecha_de_carga = models.DateField()
 
     def _str__(self):
         fila = "Titulo:" + self.titulo +  "-" + "Descripcion:" + self.descripcion

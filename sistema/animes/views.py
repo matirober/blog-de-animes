@@ -29,7 +29,8 @@ def animes(request):
     return render(request, 'animes/index.html', {'animes': animes})
 
 def buscar_anime(request):
-    return ('animes/index.html', Anime.objetcs.get.first(request.GET or None))
+    animes = Anime.objets.get.first()
+    return (request, 'animes/index.html')
 
 @login_required
 def crear_anime(request):
