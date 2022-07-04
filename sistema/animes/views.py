@@ -27,15 +27,15 @@ def nosotros(request):
 def animes(request):
     animes = Anime.objects.all()
     return render(request, 'animes/index.html', {'animes': animes})
-<<<<<<< HEAD
+            # HEAD
     
-=======
+
 
 def buscar_anime(request):
     animes = Anime.objets.get.first()
     return (request, 'animes/index.html')
 
->>>>>>> main
+        # main
 @login_required
 def crear_anime(request):
     formulario = AnimeForm(request.POST or None, request.FILES or None)
@@ -65,6 +65,10 @@ def series(request):
     series = Serie.objects.all()
     return render(request, 'series/index.html', {'series': series})
 
+def buscar_serie(request):
+    series = Serie.objets.get.first()
+    return (request, 'series/index.html')
+
 @login_required
 def crear_serie(request):
     formulario = SerieForm(request.POST or None, request.FILES or None)
@@ -93,6 +97,10 @@ def borrar_serie(request, id):
 def peliculas(request):
     peliculas = Pelicula.objects.all()
     return render(request, 'peliculas/index.html', {'peliculas': peliculas})
+
+def buscar_pelicula(request):
+    peliculas = Pelicula.objets.get.first()
+    return (request, 'peliculas/index.html')
 
 @login_required
 def crear_pelicula(request):
