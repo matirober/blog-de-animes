@@ -159,6 +159,10 @@ class UsuarioLogin(LoginView):
     template_name = 'usuarios/usuario_login.html'
     next_page = reverse_lazy("nosotros")
 
+class UsuarioList(ListView):
+
+    model = Avatar
+    template_name = "usuarios/usuario_list.html"
 
 class UsuarioLogout(LogoutView):
     template_name = 'usuarios/usuario_logout.html'
