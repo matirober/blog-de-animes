@@ -99,10 +99,17 @@ def peliculas(request):
     peliculas = Pelicula.objects.all()
     return render(request, 'peliculas/index.html', {'peliculas': peliculas})
 
+def buscar_pelicula(Peliculas):
+        encontroPelicula = 0
+        nombreParaBuscar = input("───> Digite el nombre a buscar: ")
+        print(f"\nPeliculas con la palabra {nombreParaBuscar}:\n")
+        for i in range(len(Pelicula)):
+            if Pelicula[i][0].find(nombreParaBuscar) != -1:
+                return ('buscar_pelicula')
 
-def buscar_pelicula(request):
-    peliculas = Pelicula.objets.get.first()
-    return (request, 'peliculas/index.html')
+#def buscar_pelicula(request):
+#    peliculas = Pelicula.objets.get.first()
+#    return (request, 'peliculas/index.html')
 
 @login_required
 def crear_pelicula(request):
