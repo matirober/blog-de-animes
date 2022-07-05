@@ -7,7 +7,6 @@ Ortiz Rocca Maria Laura:
 Genere la app de blog para poder insertar un feedback con el usuario dentro de la pagina de anime. La app cuenta con views, models, urls y templates para navegar.
 
 Matias Heidenreich:
-
 Realice correcciones varias a nivel general en el codigo, como restricciones de accionamiento para usuarios sin sesión activa. Además, hice el video que muestra el funcionamiento del proyecto.
 
 
