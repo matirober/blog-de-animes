@@ -9,11 +9,7 @@
     <div class="card-header">
         {% if user.is_authenticated %}
         <a name="" id="" class="btn btn-success" href="{% url 'crear_anime' %}" role="button">Agregar un nuevo anime</a>
-<<<<<<< HEAD
-        {% endif %}        
-=======
-        <a name="" id="" class="btn btn-success" href="{% url 'buscar_anime' %}" role="button">Buscar anime</a>
->>>>>>> main
+        {% endif %}    
     </div>
     <div class="card-body">
         <h4 class="card-title">Animes</h4>
@@ -29,12 +25,9 @@
                     <th>Descripcion</th>
                     <th>Autor</th>
                     <th>Duracion</th>
-<<<<<<< HEAD
                     {% if user.is_authenticated %}
-=======
-                    <th>Fecha de carga</th>
                     <th>Donde ver</th>
->>>>>>> main
+                    <th>Fecha de carga</th>
                     <th>Acciones</th>
                     {% endif %}
                 </tr>
@@ -53,13 +46,10 @@
                     </td>
                     <td>{{ anime.descripcion }}</td>
                     <td>{{ anime.autor }}</td>
-<<<<<<< HEAD
                     <td>{{ anime.duracion }}</td>
                     {% if user.is_authenticated %}
-=======
-                    <td>{{ anime.fecha_de_carga }}</td>
                     <td>{{ anime.donde_ver}}</td>
->>>>>>> main
+                    <td>{{ anime.fecha_de_carga }}</td>
                     <td> 
                         <a name="" id="" class="btn btn-info" href="{% url 'actualizar_anime' anime.id %}" role="button">Actualizar</a> 
                         <a name="" id="" class="btn btn-danger" href="{% url 'borrar_anime' anime.id %}" role="button">Borrar</a> 
