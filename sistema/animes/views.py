@@ -99,6 +99,7 @@ def peliculas(request):
     peliculas = Pelicula.objects.all()
     return render(request, 'peliculas/index.html', {'peliculas': peliculas})
 
+
 def buscar_pelicula(request):
     peliculas = Pelicula.objets.get.first()
     return (request, 'peliculas/index.html')
