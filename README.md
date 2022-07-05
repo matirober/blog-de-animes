@@ -1,14 +1,14 @@
 # ENTREGA FINAL BLOG, MATIAS ROBERTO, MATIAS H,MARIA LAURA ORTIZ ROCCA
 
 Roberto Matias:
-Hice la creacion del proyrcto, configuracion de settings (static, imagen), luego cree la aplicacion animes, dentro de ella cree los modelos, forms, vistas, urls y templates de cada una de las secciones(anime, series, peliculas). Luego cree el inicio de siesion para poder acceder a la pagina, con sus respectivas views, urls, etc. Una vez hecho esto le agregue el login required para que no cualquiera pudiera utilizar las diferentes acciones.
+Hice la creacion del proyecto, configuracion de settings (static, imagen), luego cree la aplicacion animes, dentro de ella cree los modelos, forms, vistas, urls y templates de cada una de las secciones(anime, series, peliculas). Luego cree el inicio de siesion para poder acceder a la pagina, con sus respectivas views, urls, etc. Una vez hecho esto le agregue el login required para que no cualquiera pudiera utilizar las diferentes acciones.
 
 Ortiz Rocca Maria Laura: 
 Genere la app de blog para poder insertar un feedback con el usuario dentro de la pagina de anime. La app cuenta con views, models, urls y templates para navegar.
 
-H Matias:
+Matias Heidenreich:
 
-
+Realice correcciones varias a nivel general en el codigo, como restricciones de accionamiento para usuarios sin sesión activa. Además, hice el video que muestra el funcionamiento del proyecto.
 
 
 
