@@ -23,10 +23,11 @@ class BlogDetail(DetailView):
     template_name = "PaginasBlog/blog_details.html"
 
 
-class BlogCreate(LoginRequiredMixin, CreateView):
+class BlogCreate(CreateView):
 
     model = BlogModel
-    success_url = reverse_lazy("blog_list")
+    #template_name = "PaginasBlog/blog.html"
+    success_url = reverse_lazy("blog_list") #Esto lo saqué y dejé el de arriba
     fields = ["titulo", "sub_titulo", "cuerpo"]
 
     def form_valid(self, form):
@@ -34,7 +35,7 @@ class BlogCreate(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class BlogUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class BlogUpdate(UserPassesTestMixin, UpdateView):
 
     model = BlogModel
     success_url = reverse_lazy("blog_list")
@@ -46,7 +47,7 @@ class BlogUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         
 
 
-class BlogDelete(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
+class BlogDelete(UserPassesTestMixin, DeleteView):
 
     model = BlogModel
     success_url = reverse_lazy("blog_list")
