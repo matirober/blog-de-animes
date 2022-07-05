@@ -166,3 +166,6 @@ class UsuarioList(ListView):
 
     model = Avatar
     template_name = "usuarios/usuario_list.html"
+
+def acerca_de_mi(request):
+    return render(request, 'paginas/acerca_de_mi.html')
