@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
+from requests import request
 from animes.models import Anime, Avatar, Serie, Pelicula
 from .forms import AnimeForm, SerieForm, PeliculaForm
 from django.contrib.messages.views import SuccessMessageMixin
@@ -162,10 +163,6 @@ class UsuarioLogin(LoginView):
 class UsuarioLogout(LogoutView):
     template_name = 'usuarios/usuario_logout.html'
 
-class UsuarioList(ListView):
-
-    model = Avatar
-    template_name = "usuarios/usuario_list.html"
 
 def acerca_de_mi(request):
     return render(request, 'paginas/acerca_de_mi.html')
